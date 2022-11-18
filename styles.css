@@ -1,7 +1,3 @@
-.flex-container {
-  display: flex;
-}
-
 body {
   margin: 0;
 }
@@ -10,18 +6,15 @@ nav {
   background-color: #222222;
 }
 
-ul {
+nav ul {
+  display: flex;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
 }
 
-li {
-  float: left;
-}
-
-li a {
+nav ul li a {
   display: block;
   color: white;
   text-align: center;
@@ -29,24 +22,71 @@ li a {
   text-decoration: none;
 }
 
-li a:hover {
+nav ul li a:hover {
   background-color: #111111;
 }
 
-section {
-  background-image: url("images/bg-desk.jpg");
-  align-items: stretch;
-  justify-content: center;
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 1fr;
+  height: 100vh;
+  column-gap: 16px;
+  background-color: #BBBBBB;
 }
 
-.flex-container > div {
-  flex: 50%;
+main div.introduction {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
   padding: 16px;
-  align-items: stretch;
+}
+
+main div.introduction div.greeting {
+  color: red;
+}
+
+main div.introduction div.name {
+  color: black;
+}
+
+main div.introduction div.job-title {
+  color: green;
+}
+
+main div.achievements {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  padding: 16px;
+}
+
+main div.achievements div.personal-statement{
+  color: blue;
+}
+
+main div.achievements div.download-cv{
+  color: purple;
+}
+
+p {
+  margin: 0;
+  padding: 16px;
+}
+
+h1 {
+  padding: 16px;
+}
+
+h2 {
+  padding: 16px;
+}
+
+main > div > p#personal-statement {
+  margin: 0;
+  padding: 16px;
 }
 
 footer {
-    padding: 16px;
-    background-color: #222222;
-    text-align: center;
+  padding: 16px;
+  background-color: #222222;
+  text-align: center;
 }
