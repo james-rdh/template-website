@@ -1,9 +1,21 @@
+.flex-container {
+  display: flex;
+}
+
+body {
+  margin: 0;
+}
+
+nav {
+  background-color: #222222;
+  justify-content: left
+}
+
 ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333333;
 }
 
 li {
@@ -22,17 +34,20 @@ li a:hover {
   background-color: #111111;
 }
 
-.grid-container {
-  display: grid;
-  gap: 10px 10px;
-  /* grid-template-columns: auto auto auto; */
-  padding: 10px;
+section {
+  background-image: url("images/bg-desk.jpg");
+  align-items: stretch;
+  justify-content: center;
 }
-  
-.grid-item {
-  background-color: rgba(0, 0, 0, 1);
-  border: 1px solid rgba(255, 0, 0, 1);
-  padding: 20px;
-  font-size: 30px;
-  text-align: center;
+
+.flex-container > div {
+  flex: 50%;
+  padding: 16px;
+  align-items: stretch;
+}
+
+footer {
+    padding: 16px;
+    background-color: #222222;
+    text-align: center;
 }
