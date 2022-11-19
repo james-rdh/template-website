@@ -1,12 +1,15 @@
 body {
   margin: 0;
+  width: 100vw;
+  overflow: overlay;
+  font-family: Verdana, Tahoma, sans-serif;
 }
 
 nav {
   background-color: #222222;
 }
 
-nav ul {
+nav > ul {
   display: flex;
   list-style-type: none;
   margin: 0;
@@ -14,7 +17,7 @@ nav ul {
   overflow: hidden;
 }
 
-nav ul li a {
+nav > ul > li > a {
   display: block;
   color: white;
   text-align: center;
@@ -22,71 +25,96 @@ nav ul li a {
   text-decoration: none;
 }
 
-nav ul li a:hover {
+nav > ul > li > a:hover {
   background-color: #111111;
 }
 
 main {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 1fr;
-  height: 100vh;
-  column-gap: 16px;
-  background-color: #BBBBBB;
+  column-gap: 50px;
+  column-rule: 1px;
+  background-color: #333333;
 }
 
-main div.introduction {
+main > div {
   display: grid;
+  height: calc(100vh - 50px);
+}
+
+main > div.introduction {
   grid-template-rows: 1fr 1fr 1fr;
-  padding: 16px;
 }
 
-main div.introduction div.greeting {
-  color: red;
-}
-
-main div.introduction div.name {
-  color: black;
-}
-
-main div.introduction div.job-title {
-  color: green;
-}
-
-main div.achievements {
-  display: grid;
+main > div.achievements {
   grid-template-rows: 1fr 1fr;
-  padding: 16px;
 }
 
-main div.achievements div.personal-statement{
-  color: blue;
+main > div > div {
+  color: white;
+  display: flex;
 }
 
-main div.achievements div.download-cv{
-  color: purple;
+main > div.introduction > div {
+  padding-left: 25px;
+}
+
+main > div.achievements > div {
+  padding-right: 25px;
+}
+
+main > div.introduction > div.greeting {
+  align-items: flex-end;
+  padding-top: 25px;
+}
+
+main > div.introduction > div.name {
+  align-items: center;
+}
+
+main > div.introduction > div.job-title {
+  align-items: flex-start;
+  padding-bottom: 25px;
+}
+
+main > div.achievements > div {
+  align-items: center;
+  justify-content: center;
 }
 
 p {
   margin: 0;
-  padding: 16px;
 }
 
 h1 {
-  padding: 16px;
+  margin: 0;
 }
 
 h2 {
-  padding: 16px;
+  margin: 0;
 }
 
-main > div > p#personal-statement {
+footer {
+  display: grid;
+  background-color: #222222;
+  text-align: center;
+}
+
+footer p {
   margin: 0;
   padding: 16px;
 }
 
-footer {
-  padding: 16px;
-  background-color: #222222;
-  text-align: center;
+::-webkit-scrollbar {
+  width: 16px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(127, 127, 127, 0.5);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+  border-radius: 10px;
 }
