@@ -1,120 +1,147 @@
+html {
+  font-size: 62.5%;
+}
+
 body {
   margin: 0;
-  width: 100vw;
+  width: 100%;
   overflow: overlay;
-  font-family: Verdana, Tahoma, sans-serif;
+  background-image: radial-gradient(#880044, #660033, #220011);
+  background-size: cover;
+  background-position: left;
+  font-size: 1.8rem;
 }
 
-nav {
-  background-color: #222222;
-}
-
-nav > ul {
-  display: flex;
-  list-style-type: none;
+body * {
   margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Tahoma, sans-serif;
+  color: #DDDDDD;
+  font-weight: normal;
+}
+
+body h1 {
+  font-size: 3.98em;
+  text-shadow: 0.05em 0.05em #220011;
+}
+
+body h2 {
+  font-size: 1.96em;
+  text-shadow: 0.05em 0.05em #220011;
+}
+
+body h3 {
+  text-shadow: 0.05rem 0.05rem #220011;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+header > nav {
+  background-color: rgba(17, 17, 17, 0.5);
+}
+
+header > nav:hover {
+  background-color: rgba(8, 8, 8, 0.75);
+}
+
+header > nav > ul {
   padding: 0;
+  display: flex;
   overflow: hidden;
+  justify-content: flex-start;
+  list-style-type: none;
 }
 
-nav > ul > li > a {
+header > nav > ul > li > a {
+  padding: 1em;
   display: block;
-  color: white;
+  color: #DDDDDD;
   text-align: center;
-  padding: 16px;
   text-decoration: none;
+  transition: all 0.3s ease 0s;
+  border-radius: 0.5em;
 }
 
-nav > ul > li > a:hover {
-  background-color: #111111;
+header > nav > ul > li > a:hover {
+  background-color: rgba(0, 0, 0, 0.75);
 }
 
 main {
   display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  height: 100vh;
   grid-template-columns: 1fr 1fr;
-  column-gap: 50px;
-  column-rule: 1px;
-  background-color: #333333;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 main > div {
-  display: grid;
-  height: calc(100vh - 50px);
-}
-
-main > div.introduction {
-  grid-template-rows: 1fr 1fr 1fr;
-}
-
-main > div.achievements {
-  grid-template-rows: 1fr 1fr;
-}
-
-main > div > div {
-  color: white;
+  padding: 1em;
   display: flex;
+  flex-direction: column;
 }
 
-main > div.introduction > div {
-  padding-left: 25px;
-}
-
-main > div.achievements > div {
-  padding-right: 25px;
-}
-
-main > div.introduction > div.greeting {
-  align-items: flex-end;
-  padding-top: 25px;
-}
-
-main > div.introduction > div.name {
+main > div.name {
+  grid-row: 1 / 4;
+  justify-content: flex-end;
   align-items: center;
 }
 
-main > div.introduction > div.job-title {
-  align-items: flex-start;
-  padding-bottom: 25px;
+main > div.job-title {
+  grid-row: 4 / 7;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-main > div.achievements > div {
-  align-items: center;
+main > div.job-description {
+  grid-row: 1 / 3;
   justify-content: center;
-}
-
-p {
-  margin: 0;
-}
-
-h1 {
-  margin: 0;
-}
-
-h2 {
-  margin: 0;
-}
-
-footer {
-  display: grid;
-  background-color: #222222;
+  align-items: center;
   text-align: center;
 }
 
-footer p {
-  margin: 0;
-  padding: 16px;
+main > div.tech-stack {
+  grid-row: 3 / 5;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+  
+main > div.cv {
+  grid-row: 5 / 7;
+  justify-content: center;
+  align-items: center;
 }
 
-::-webkit-scrollbar {
-  width: 16px;
+main > div.cv > button {
+  color: #222222;
+  font-size: 1em;
+  padding: 1em;
+  border: 0;
+  border-radius: 2em;
 }
 
-::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0);
+main > div.cv > button:hover {
+  background-color:#AAAAAA;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(127, 127, 127, 0.5);
-  box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
-  border-radius: 10px;
+footer {
+  width: 100vw;
+}
+
+footer > div.footer {
+  padding: 1em;
+  display: flex;
+  background-color: #111111;
+  opacity: 0.5;
+  justify-content: center;
+  align-items: center;
+}
+
+footer > div.footer:hover {
+  opacity: 1;
 }
