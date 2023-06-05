@@ -5,16 +5,35 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>James Hamilton</title>
   <link rel=stylesheet href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    function scrollToTop(event) {
+      event.preventDefault();
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+    }
+    function scrollToElement(event, elementId) {
+      event.preventDefault();
+      const targetElement = document.getElementById(elementId);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  </script>
+  </script>
 </head>
 
 <body>
   <header>
     <nav>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" onclick="scrollToTop(event)">Home</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'projects')">Projects</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
       </ul>
     </nav>
   </header>
@@ -23,23 +42,34 @@
     <section id="hero">
       <div id="name"><h1>James Hamilton</h1></div>
       <div id="profession"><h2>Data Science</h2></div>
-      <div id="tagline"><p><b>Data-driven solutions fueled by curiosity and innovation</b></p></div>
+      <div id="tagline"><p>Data-driven solutions fueled by curiosity and innovation</p></div>
     </section>
-    <section id="purpose">
+    <section id="visual">
       <div id="data"><img src="images/data_raw.gif" alt="Raw data"></div>
       <div id="arrow"><img src="images/data_transformation.gif" alt="Data transformation"></div>
-      <div id="value"><img src="images/data_value.gif" alt="Data visualisation"></div> 
+      <div id="value"><img src="images/data_value.gif" alt="Data value"></div> 
     </section>
     <hr>
-    <section id="recent">
-      <h3>My Latest Projects</h3>
+    <section id="projects">
+      <h3>Recent Projects</h3>
+      <div id="projects-list"></div>
+    </section>
+    <hr>
+    <section id="about">
+      <h3>About Me</h3>
+      <div id="content-wrapper">
+        <div id="profile">
+          <p>Little section about me</p>
+        </div>
+        <div id="headshot">
+          <!-- <img src="images/headshot.jpg" alt="Headshot"> -->
+        </div>
+      </div>
     </section>
   </main>
 
   <footer>
-    <div class="footer">
-      <p>Copyright &#xA9; 2023 &#x7C; James Hamilton</p>
-    </div>
+    <small>Copyright &#xA9; 2023 James Hamilton &#x7C; All rights reserved</small>
   </footer>
 </body>
 

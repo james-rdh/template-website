@@ -2,9 +2,8 @@
 
 * {
   box-sizing: border-box;
-  font-family: Tahoma, Verdana, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   margin: 0;
-  padding: 0;
   color: #DDDDDD;
   font-weight: normal;
 }
@@ -28,12 +27,8 @@ header, main, footer {
 }
 
 header {
+  position: sticky;
   top: 0;
-  position: fixed;
-}
-
-main {
-  margin-top: 3.2em;
 }
 
 /* Text */
@@ -60,15 +55,24 @@ h4 {
   font-size: 1.24em;
 }
 
+b {
+  font-weight: 700;
+}
+
+p {
+  padding: 1em;
+}
+
 /* Navigation Bar */
 
 nav {
-  background-color: #1F305E;
+  background-color: #243B53;
   box-shadow: 0 5px 5px rgba(0, 0, 0, 0.4);
 }
 
 nav > ul {
   display: flex;
+  padding: 0;
   overflow: hidden;
   list-style-type: none;
   align-items: stretch;
@@ -79,7 +83,7 @@ nav > ul > li {
 }
 
 nav > ul > li > a {
-  background-color: #1F305E;
+  background-color: #243B53;
   padding: 1em;
   display: block;
   text-decoration: none;
@@ -87,7 +91,7 @@ nav > ul > li > a {
 }
 
 nav > ul > li > a:hover {
-  background-color: #0E1F4D;
+  background-color: #102A43;
 }
 
 /* Main Content */
@@ -101,10 +105,11 @@ section {
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: calc(50vh - 1.6em);
+  background-color: #121212;
 }
 
 #hero {
+  height: calc(50vh - 1.6em);
   position: relative;
   z-index: -1;
   display: flex;
@@ -144,18 +149,33 @@ section {
 #tagline > p {
   text-shadow: 0.1em 0.1em 0.1em #080808;
   z-index: 1;
-  padding: 1em;
 }
 
-#purpose {
+#content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+#profile {
+  width: 100%;
+  height: 100%;
+}
+
+#headshot {
+  width: 100%;
+  height: 100%;
+}
+
+#visual {
+  height: calc(50vh - 1.6em);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  background-color: #121212;
   box-shadow: 0 -5px 5px rgba(0, 0, 0, 0.4);
 }
 
-#purpose > div {
+#visual > div {
   display: flex;
+  padding: 1em;
   width: 100%;
   height: 100%;
   align-items: center;
@@ -169,16 +189,27 @@ div > img {
   object-fit: contain;
 }
 
-#recent {
-  background-color: #121212;
+#projects {
+  display: flex;
+  flex-direction: column;
+}
+
+#projects-list {
+  width: 100%;
+}
+
+#about {
+  display: flex;
+  flex-direction: column;
 }
 
 /* Footer */
 
-footer > div.footer {
+footer {
+  height: calc(25vh - 1.6em);
   padding: 1em;
   display: flex;
-  background-color: #0E1F4D;
+  background-color: #243B53;
   justify-content: center;
   align-items: center;
 }
