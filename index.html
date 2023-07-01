@@ -7,7 +7,7 @@
   <link rel=stylesheet href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
   <script>
     function scrollToTop(event) {
       event.preventDefault();
@@ -32,6 +32,7 @@
     <nav>
       <ul>
         <li><a href="#" onclick="scrollToTop(event)">Home</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'expertise')">Expertise</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'projects')">Projects</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
       </ul>
@@ -40,30 +41,40 @@
 
   <main>
     <section id="hero">
-      <div id="name"><h1>James Hamilton</h1></div>
-      <div id="profession"><h2>Data Science</h2></div>
-      <div id="tagline"><p>Data-driven solutions fueled by curiosity and innovation</p></div>
+      <div id="hero-container">
+        <div id="hero-grid">
+          <div id="hero-name"><h1>James Hamilton</h1></div>
+          <div id="hero-subject"><h2>Data Science</h2></div>
+        </div>
+      </div>
     </section>
-    <section id="visual">
-      <div id="data"><img src="images/data_raw.gif" alt="Raw data"></div>
-      <div id="arrow"><img src="images/data_transformation.gif" alt="Data transformation"></div>
-      <div id="value"><img src="images/data_value.gif" alt="Data value"></div> 
+    <section id="expertise">
+      <div id="expertise-container">
+        <div id="expertise-title"><h3>Expertise</h3></div>
+        <div id="expertise-grid">
+          <div id="expertise-text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+          <div id="expertise-visual">
+            <div id="data"><img src="images/data_raw.gif" alt="Raw data"></div>
+            <div id="arrow"><img src="images/data_transformation.gif" alt="Data transformation"></div>
+            <div id="value"><img src="images/data_value.gif" alt="Data value"></div> 
+          </div>
+        </div>
+      </div>
     </section>
-    <hr>
     <section id="projects">
-      <h3>Recent Projects</h3>
-      <div id="projects-list"></div>
+      <div id="projects-container">
+        <div id="projects-title"><h3>Latest Projects</h3></div>
+        <div id="projects-grid"></div>
+      </div>
     </section>
-    <hr>
     <section id="about">
-      <h3>About Me</h3>
-      <div id="content-wrapper">
-        <div id="profile">
-          <p>Little section about me</p>
-        </div>
-        <div id="headshot">
-          <!-- <img src="images/headshot.jpg" alt="Headshot"> -->
-        </div>
+      <div id="about-container">
+        <div id="about-title"><h3>About Me</h3></div>
+        <div id="about-grid">
+          <div id="profile"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p></div>
+          <div id="headshot">
+            <!-- <img src="images/headshot.jpg" alt="Headshot"> -->
+          </div>
       </div>
     </section>
   </main>
