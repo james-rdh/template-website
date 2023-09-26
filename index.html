@@ -24,16 +24,18 @@
       }
     }
   </script>
-  </script>
 </head>
 
 <body>
+  
   <header>
     <nav>
       <ul>
-        <li><a href="#" onclick="scrollToTop(event)">Home</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'projects')">Projects</a></li>
+        <li><a href="#" onclick="scrollToTop(event)"><h1 id="name">James Hamilton</h1></a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'contact')">Contact</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'search')">Search</a></li>
       </ul>
     </nav>
   </header>
@@ -41,67 +43,56 @@
   <main>
 
     <section id="hero">
-      <div id="hero-name">
-        <h1>James Hamilton</h1>
+      <div id="hero-left">
+        <div id="hero-title">
+          <h2>Data Science</h2>
+        </div>
+        <div id="hero-subtitle">
+          <p>Creating value with data</p>
+        </div>
       </div>
-      <div id="hero-subject">
-        <h2>Data Science</h2>
-      </div>
-      <div class="next-section">
-        <img src="images/data_transformation.gif" alt="Next section" onclick="scrollToElement(event, 'skills')">
-      </div>
-    </section>
-
-    <section id="skills">
-      <div id="skills-overlay"></div>
-      <div id="skills-text">
-        <p>Unlocking the power of data to create meaningful stories and drive informed decisions is my passion. Through this portfolio, I aim to demonstrate the art of transforming raw data into valuable insights, showcasing the magic that lies within the numbers and unveiling the untapped potential of information.</p>
-      </div>
-      <div id="skills-visual">
-        <img src="images/data_raw.gif" alt="Raw data">
-        <img src="images/data_transformation.gif" alt="Data transformation">
-        <img src="images/data_value.gif" alt="Data value">
-      </div>
-      <div class="next-section">
-        <img src="images/data_transformation.gif" alt="Next section" onclick="scrollToElement(event, 'projects')">
+      <div id="hero-right">
+        <div id="hero-visual">
+          <p>Visual</p>
+        </div>
       </div>
     </section>
 
-    <section id="projects">
-      <div id="projects-title">
-        <h3>Latest Projects</h3>
+    <section id="work">
+      <div id="work-title">
+        <h3>Work</h3>
       </div>
-      <div id="projects-display">
-        <div id="projects-display-1">
+      <div id="work-display">
+        <div id="work-display-1">
           <a href="projects/activity-classification.html">
             <img src="images/bg_hero.png" alt="Placeholder 1">
             <h4>Placeholder text 1</h4>
           </a>
         </div>
-        <div id="projects-display-2">
+        <div id="work-display-2">
           <a href="projects/activity-classification.html">
             <img src="images/bg_hero.png" alt="Placeholder 2">
             <h4>Placeholder text 2</h4>
           </a>
         </div>
-      </div>
-      <div class="next-section">
-        <img src="images/data_transformation.gif" alt="Next section" onclick="scrollToElement(event, 'about')">
+        <div id="work-display-3">
+          <a href="projects/activity-classification.html">
+            <img src="images/bg_hero.png" alt="Placeholder 3">
+            <h4>Placeholder text 3</h4>
+          </a>
+        </div>
       </div>
     </section>
 
     <section id="about">
       <div id="about-title">
-        <h3>About Me</h3>
+        <h3>About</h3>
       </div>
-      <div id="about-profile">
+      <div id="about-subtitle">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div id="about-headshot">
         <img src="images/bg_hero.png" alt="Headshot">
-      </div>
-      <div class="next-section">
-        <img src="images/data_transformation.gif" alt="Next section" onclick="scrollToElement(event, 'hero')">
       </div>
     </section>
 
