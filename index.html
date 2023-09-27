@@ -7,7 +7,7 @@
   <link rel=stylesheet href="styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <script>
     function scrollToTop(event) {
       event.preventDefault();
@@ -30,13 +30,13 @@
   
   <header>
     <nav>
-      <ul>
+      <ul id="nav-left">
         <li><a href="#" onclick="scrollToTop(event)"><h1 id="name">James Hamilton</h1></a></li>
+      </ul>
+      <ul id="nav-right">
         <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'contact')">Contact</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'search')">Search</a></li>
-      </ul>
+        <li><a href="#" onclick="scrollToElement(event, 'contact')">Contact</a></li>      </ul>
     </nav>
   </header>
 
@@ -44,55 +44,64 @@
 
     <section id="hero">
       <div id="hero-left">
-        <div id="hero-title">
+        <div id="hero-heading">
           <h2>Data Science</h2>
         </div>
-        <div id="hero-subtitle">
-          <p>Creating value with data</p>
+        <div id="hero-purpose">
+          <h4>Creating value with data</h4>
         </div>
       </div>
       <div id="hero-right">
         <div id="hero-visual">
-          <p>Visual</p>
+          <p>Insights</p>
+          <img src="images/bg_hero.png">
+          <p>Python</p>
         </div>
       </div>
     </section>
 
     <section id="work">
-      <div id="work-title">
+      <div id="work-heading">
         <h3>Work</h3>
       </div>
       <div id="work-display">
-        <div id="work-display-1">
-          <a href="projects/activity-classification.html">
-            <img src="images/bg_hero.png" alt="Placeholder 1">
-            <h4>Placeholder text 1</h4>
-          </a>
-        </div>
-        <div id="work-display-2">
-          <a href="projects/activity-classification.html">
+        <a href="work/product/work-1.html">
+          <img src="images/bg_hero.png" alt="Placeholder 1">
+          <h4>Placeholder text 1</h4>
+        </a>
+        <a href="work/tutorial/work-2.html">
             <img src="images/bg_hero.png" alt="Placeholder 2">
             <h4>Placeholder text 2</h4>
-          </a>
-        </div>
-        <div id="work-display-3">
-          <a href="projects/activity-classification.html">
+        </a>
+        <a href="work/insight/work-3.html">
             <img src="images/bg_hero.png" alt="Placeholder 3">
             <h4>Placeholder text 3</h4>
-          </a>
-        </div>
+        </a>
+        <a href="work/work-4.html">
+            <img src="images/bg_hero.png" alt="Placeholder 4">
+            <h4>Placeholder text 4</h4>
+        </a>
       </div>
     </section>
 
     <section id="about">
-      <div id="about-title">
+      <div id="about-heading">
         <h3>About</h3>
       </div>
-      <div id="about-subtitle">
+      <div id="about-description">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
       <div id="about-headshot">
         <img src="images/bg_hero.png" alt="Headshot">
+      </div>
+    </section>
+
+    <section id="contact">
+      <div id="contact-heading">
+        <h3>Contact</h3>
+      </div>
+      <div id="contact-list">
+        <p>ul</p>
       </div>
     </section>
 
