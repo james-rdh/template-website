@@ -30,40 +30,31 @@
   
   <header>
     <nav>
-      <ul id="nav-left">
-        <li><a href="#" onclick="scrollToTop(event)"><h1 id="name">James Hamilton</h1></a></li>
-      </ul>
-      <ul id="nav-right">
+      <a href="#" onclick="scrollToTop(event)">
+        <h1 id="heading">James Hamilton</h1>
+      </a>
+      <ul id="nav-list">
+        <li><a href="#" onclick="scrollToElement(event, 'hero')">Home</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'contact')">Contact</a></li>      </ul>
+      </ul>
     </nav>
   </header>
 
   <main>
 
     <section id="hero">
-      <div id="hero-left">
-        <div id="hero-heading">
-          <h2>Data Science</h2>
-        </div>
-        <div id="hero-purpose">
-          <h4>Creating value with data</h4>
-        </div>
-      </div>
-      <div id="hero-right">
-        <div id="hero-visual">
-          <p>Insights</p>
-          <img src="images/bg_hero.png">
-          <p>Python</p>
-        </div>
+      <h2>Data Science</h2>
+      <p>Generating value using data</p>
+      <div id="hero-visual">
+        <p>Insights</p>
+        <img src="images/bg_hero.png">
+        <p>Python</p>
       </div>
     </section>
-
+  
     <section id="work">
-      <div id="work-heading">
-        <h3>Work</h3>
-      </div>
+      <h3>Work</h3>
       <div id="work-display">
         <a href="work/product/work-1.html">
           <img src="images/bg_hero.png" alt="Placeholder 1">
@@ -93,15 +84,6 @@
       </div>
       <div id="about-headshot">
         <img src="images/bg_hero.png" alt="Headshot">
-      </div>
-    </section>
-
-    <section id="contact">
-      <div id="contact-heading">
-        <h3>Contact</h3>
-      </div>
-      <div id="contact-list">
-        <p>ul</p>
       </div>
     </section>
 
