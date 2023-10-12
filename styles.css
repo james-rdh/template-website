@@ -90,23 +90,21 @@ section {
 /* ----------- Text ------------ */
 h2, h3, h4, p {
   color: var(--col-white);
-  padding: 1.6rem;
 }
 
 h1 {
+  /* position: relative;
+  top: 1.6rem; */
   color: var(--col-primary);
   align-self: center;
+  font-family: "Crimson Text", serif;
   font-size: 4rem;
   font-weight: 700;
-  /* text-shadow:
-    0px 1px var(--col-alert),
-    0px -1px var(--col-alert),
-    1px 0px var(--col-alert),
-    -1px 0px var(--col-alert),
-    1px 1px var(--col-alert),
-    -1px -1px var(--col-alert),
-    1px -1px var(--col-alert),
-    -1px 1px var(--col-alert); */
+  text-shadow:
+    -1px -1px 0 var(--col-alert),
+    -1px 1px 0 var(--col-alert),
+    1px -1px 0 var(--col-alert),
+    1px 1px 0 var(--col-alert);
 }
 
 h2 {
@@ -130,7 +128,7 @@ p {
 /* ----------- Header ------------- */
 header {
   width: 100%;
-  position: absolute;
+  position: fixed;
   top: 0;
 }
 
@@ -140,8 +138,14 @@ nav {
   padding-left: 7.2rem;
   padding-right: 7.2rem;
   justify-content: space-between;
+  background-color: var(--col-secondary);
   transition: all 0.3s ease 0s;
   z-index: 1;
+  box-shadow: 0 0 0.8rem var(--col-black);
+}
+
+nav:hover {
+  box-shadow: 0 0 1.6rem var(--col-black);
 }
 
 nav > a {
@@ -150,7 +154,10 @@ nav > a {
   text-decoration: none;
   transition: all 0.3s ease 0s;
   color: var(--col-white);
-  border-radius: 2.5%;
+}
+
+nav > a:hover {
+  background-color: var(--col-alert); 
 }
 
 #nav-list {
@@ -172,113 +179,116 @@ nav > a {
   text-decoration: none;
   transition: all 0.3s ease 0s;
   color: var(--col-white);
-  border-radius: 2.5%;
+}
+
+#nav-list > li:last-child > a {
+  font-size: 2rem;
+  font-weight: 700;
+  padding: 1.6rem;
+  display: flex;
+  align-self: stretch;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  color: var(--col-primary);
+  text-shadow:
+    -1px -1px 0 var(--col-alert),
+    -1px 1px 0 var(--col-alert),
+    1px -1px 0 var(--col-alert),
+    1px 1px 0 var(--col-alert);
 }
 
 #nav-list > li > a:hover {
   background-color: var(--col-primary);
 }
 
+#nav-list > li:last-child > a:hover {
+  background-color: var(--col-alert);
+}
+
 /* ----------- Hero ------------ */
 #hero {
-  position: relative;
+  display: flex;
+  align-items: stretch;
+  height: 100vh;
+  background: radial-gradient(ellipse farthest-corner at left, var(--col-accent) 0%, var(--col-secondary) 50%);
+}
+
+#hero-heading {
+  flex: 1;
+  padding: 1.6rem;
   display: grid;
   grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 1.6rem;
-  height: 100vh;
-  background: radial-gradient(ellipse farthest-corner at bottom, var(--col-accent) 0%, var(--col-secondary) 50%);
-  overflow: hidden;
-  z-index: -1;
+  gap: 1.6rem;
 }
 
-#hero::after {
-  content: '';
-  position: absolute;
-  align-self: center;
-  width: 100%;
-  height: 150%;
-  left: -50%;
-  border-radius: 50%;
-  background-color: var(--col-secondary);
-  z-index: -1;
-}
-
-#hero > h2 {
+#hero-heading > h2 {
   place-self: end start;
-  grid-column: 1 / 2;
-  grid-row: 1 / 2;
 }
 
-#hero p {
+#hero-heading > p {
   font-size: 2rem;
+  place-self: start;
 }
 
-#hero > p {
-  place-self: start;
-  grid-column: 1 / 2;
-  grid-row: 2 / 3;
+#hero-content {
+  flex: 1;
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 #hero-visual {
-  display: flex;
-  flex-direction: column;
-  place-self: center;
-  grid-column: 2 / 3;
-  grid-row: 1 / 3;
-  padding: 1.6rem;
-  place-items: center;
-  justify-content: space-evenly;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  width: 100%;
-  max-height: 100%;
-  background-color: var(--col-primary);
-}
-
-#hero-visual > img {
   width: 100px;
 }
 
-/* ----------- Work ------------ */
-#work {
-  height: 100vh;
+/* ----------- Portfolio ------------ */
+#portfolio {
   display: flex;
   flex-direction: column;
-  background-color: var(--col-secondary);
+  height: 100vh;
+  background: var(--col-primary);
+  box-shadow: 0 0 1.6rem var(--col-black);
+  /* z-index: 1; */
 }
 
-#work > h3 {
+#portfolio-heading {
+  display: flex;
+  align-items: center;
   height: 7.2rem;
+  padding: 1.6rem;
 }
 
-#work-display {
+#portfolio-display {
+  flex: 1;
   display: grid;
   gap: 1.6rem;
-  flex: 1;
+  padding: 1.6rem;
   grid-template-rows: repeat(2, 1fr);
   grid-template-columns: repeat(2, 1fr);
 }
 
-#work-display > a {
+#portfolio-display > a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   text-decoration: none;
-  background-color: var(--col-primary);
-  /* border-radius: 5%; */
 }
 
-#work-display > a > img {
-  object-fit: cover;
-  flex: 1;
-  max-width: 100%;
-  aspect-ratio: 16 / 9;
+#portfolio-display > a > img {
+  /* width: 100px;
+  height: 100px; */
+  width: 100%;
+  height: calc(50vh - 20rem);
   align-self: center;
 }
 
-#work-display > a > h4 {
+#portfolio-display > a > h4 {
+  padding: 1.6rem;
   height: 6.8rem;
+  background:  var(--col-tertiary);
 }
 
 /* ----------- About ----------- */
@@ -286,43 +296,67 @@ nav > a {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  background: radial-gradient(ellipse farthest-corner at top, var(--col-accent) 0%, var(--col-secondary) 50%);
+  background: var(--col-secondary);
 }
 
 #about-heading {
   display: flex;
   align-items: center;
   height: 7.2rem;
+  padding: 1.6rem;
 }
 
-#about-description > p {
+#about-content {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.6rem;
+  padding: 1.6rem;
+}
+
+#about-content > p {
   text-align: justify;
 }
 
-#about-headshot {
+#about-visual {
+  justify-self: center;
   width: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#about-headshot > img {
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 10px;
+  height: 100px;
+  /* max-width: 100%;
+  max-height: 100%; */
+  padding: 1.6rem;
 }
 
 /* ---------- Footer ----------- */
 
 footer {
-  height: 25vh;
-  padding: 1em;
+  padding: 7.2rem;
   display: flex;
+  flex-direction: column;
   background-color: var(--col-primary);
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
-footer > small {
+#footer-nav {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1.6rem;
+}
+
+#footer-nav > ul > li > a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  color: var(--col-white);
+  border-radius: 2.5%;
+}
+
+#footer-copyright {
+  display: flex;
+  justify-content: center;
+  padding: 1.6rem;
+}
+
+#footer-copyright > small {
   color: var(--col-white);
 }
