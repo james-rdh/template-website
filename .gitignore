@@ -8,7 +8,7 @@ logs/
 output/
 
 # Ignore configuration files
-nginx.config
+nginx.conf
 mime.types
 .env
 
