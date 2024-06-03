@@ -31,73 +31,63 @@
   <header>
     <nav>
       <a href="/" onclick="scrollToTop(event)">
-        <h1>James Hamilton</h1>
+        <h1>Energy by Data</h1>
         <!-- <img src="images/logo.webp" alt="Logo"> -->
       </a>
       <ul id="nav-list">
         <li><a href="#" onclick="scrollToElement(event, 'hero')">Home</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'portfolio')">Portfolio</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'cv')">CV</a></li>
       </ul>
     </nav>
   </header>
-
+  
   <main>
 
     <section id="hero">
-      <div id="hero-heading">
+        <h2>Energy Sustainability</h2>
+        <p>powered by</p>
         <h2>Data Science</h2>
-        <p id="hero-tagline">Transforming data from a valuable resource into a useful tool</p>
+    </section>
+  
+    <section id="work">
+      <div id="work-heading">
+        <h3>Work</h3>
       </div>
-      <div id="hero-content">
-        <p>Solutions</p>
-        <img id="hero-visual" src="images/hero-visual.png">
-        <p>Tools</p>
+      <div id="work-carousel">
+        <div id="work-item1" class="work-item">
+          <a href="work/product/work.html">
+            <img src="images/bg_hero.png" alt="Placeholder">
+            <h4>Placeholder text</h4>
+          </a>
+        </div>
+        <div id="work-item2" class="work-item">
+          <a href="work/tutorial/work2.html">
+            <img src="images/bg_hero.png" alt="Placeholder 2">
+            <h4>Placeholder text 2</h4>
+          </a>
+        </div>
       </div>
     </section>
   
-    <section id="portfolio">
-      <div id="portfolio-heading">
-        <h3>Portfolio</h3>
-      </div>
-      <div id="portfolio-display">
-        <a href="portfolio/product/work-1.html">
-          <img src="images/bg_hero.png" alt="Placeholder 1">
-          <h4>Placeholder text 1</h4>
-        </a>
-        <a href="portfolio/tutorial/work-2.html">
-          <img src="images/bg_hero.png" alt="Placeholder 2">
-          <h4>Placeholder text 2</h4>
-        </a>
-        <a href="portfolio/insight/work-3.html">
-            <img src="images/bg_hero.png" alt="Placeholder 3">
-            <h4>Placeholder text 3</h4>
-        </a>
-        <a href="portfolio/work-4.html">
-            <img src="images/bg_hero.png" alt="Placeholder 4">
-            <h4>Placeholder text 4</h4>
-        </a>
-      </div>
-    </section>
-
     <section id="about">
       <div id="about-heading">
         <h3>About</h3>
       </div>
       <div id="about-content">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        <img id="about-visual" src="images/bg_hero.png" alt="Headshot">
+        <img id="about-headshot" src="images/bg_hero.png" alt="Headshot">
       </div>
     </section>
-
+    
   </main>
-
+  
   <footer>
     <div id="footer-nav">
       <ul>
         <li><a href="#" onclick="scrollToElement(event, 'hero')">Home</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'portfolio')">Portfolio</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'cv')">CV</a></li>
       </ul>
@@ -106,6 +96,7 @@
       <small>Copyright &#xA9; 2023 James Hamilton. All rights reserved</small>
     </div>
   </footer>
+  
 </body>
 
 </html>

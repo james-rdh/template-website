@@ -1,16 +1,6 @@
-# General
 # Ignore package managers and virtual environments
 Dockerfile
 compose.yaml
 
-# Ignore logs and output files
-logs/
-output/
-
 # Ignore configuration files
-nginx.conf
-mime.types
-.env
-
-# Ignore any folders named "tests"
-tests/
+*.conf
