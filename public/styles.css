@@ -50,20 +50,6 @@ table {
 }
 
 /* --------- Colour Theme ----------- */
-
-/* :root {
-  --col-primary: #208040;
-  --col-primary-bg: #30BF60;
-  --col-primary-fg: #104020;
-  --col-secondary: #404A80;
-  --col-secondary-bg: #6070BF;
-  --col-secondary-fg: #202540;
-  --col-accent: #FFD500;
-  --col-white: #FFFFFF;
-  --col-black: #000000;
-} */
-
-
 :root {
   --col-primary: #208040;
   --col-primary-bg: #2DB359;
@@ -89,7 +75,6 @@ html {
 
 body {
   margin: 0;
-  font-size: 1.6em;
 }
 
 main {
@@ -97,25 +82,37 @@ main {
   flex-direction: column;
 }
 
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+}
+
 section {
   padding: 7.2rem;
 }
 
 /* ----------- Text ------------ */
-h2, h3, h4, p {
+h1, h2, h3, h4, p {
   color: var(--col-black);
+  padding: 1.6rem;
+}
+
+h1, h2, h3, h4 {
+  color: var(--col-black);
+  padding: 1.6rem;
+  font-weight: 700;
 }
 
 h1 {
-  /* position: relative;
-  top: 1.6rem; */
   align-self: center;
   font-family: "Crimson Text", serif;
   font-size: 4rem;
   font-weight: 700;
 }
 
-h1:hover {  
+h1:hover {
+  color: var(--col-accent);
   text-shadow:
     -1px -1px 0 var(--col-secondary-bg),
     -1px 1px 0 var(--col-secondary-bg),
@@ -124,13 +121,11 @@ h1:hover {
 }
 
 h2 {
-  /* text-transform: uppercase; */
   font-size: 6rem;
-  font-weight: 400;
 }
 
 h3 {
-  font-size: 4rem;
+  font-size: 3.2rem;
 }
 
 h4 {
@@ -141,13 +136,7 @@ p {
   font-size: 1.6rem;
 }
 
-/* ----------- Header ------------- */
-header {
-  width: 100%;
-  position: fixed;
-  top: 0;
-}
-
+/* ----------- Navbar ------------- */
 nav {
   display: flex;
   height: 7.2rem;
@@ -165,7 +154,6 @@ nav:hover {
 }
 
 nav > a {
-  padding: 1.6rem;
   display: flex;
   text-decoration: none;
   transition: all 0.3s ease 0s;
@@ -206,121 +194,47 @@ nav > a:hover {
 #hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-evenly;
   height: 100vh;
-  background-color: var(--col-primary-bg);
+  background-color: var(--col-white);
 }
 
-#hero > p {
-  font-size: 2rem;
-}
-
-
-#hero > h2:nth-child(1):hover {
-  color: var(--col-primary-fg);
-}
-
-#hero > p:hover {
-  color: var(--col-accent);
-}
-
-#hero > h2:nth-child(3):hover {
-  color: var(--col-secondary-fg);
-}
-#hero-content {
-  flex: 1;
-  padding: 1.6rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  align-items: center;
-}
-
-#hero-visual {
-  width: 100px;
-}
-
-/* ----------- Work ------------ */
-#work {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background: var(--col-secondary-bg);
-}
-
-#work-heading {
-  display: flex;
-  align-self: center;
-  height: 7.2rem;
-  padding: 1.6rem;
-}
-
-#work-carousel {
-  display: flex;
-  flex: 1;
-  justify-content: flex-start;
-  align-items: stretch;
-  gap: 1.6rem;
-  padding: 1.6rem;
-}
-
-.work-item {
-  display: flex;
-  height: 100%;
-}
-
-.work-item > a {
-  height: 100%;
-  text-decoration: none;
-}
-
-.work-item > a > img {
-  width: 100px;
-  height: 100px;
-  align-self: center;
-}
-
-.work-item > a > h4 {
-  padding: 1.6rem;
-  height: 6.8rem;
-  background:  var(--col-tertiary);
-}
-
-/* ----------- About ----------- */
-#about {
+/* ----------- Projects ------------ */
+#projects {
   display: flex;
   flex-direction: column;
   height: 100vh;
   background: var(--col-primary-bg);
 }
 
-#about-heading {
+#projects-heading {
   display: flex;
-  align-items: center;
   height: 7.2rem;
-  padding: 1.6rem;
 }
 
-#about-content {
+#projects-carousel {
+  display: flex;
   flex: 1;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 1.6rem;
-  padding: 1.6rem;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-#about-content > p {
-  text-align: justify;
+.projects-item {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-#about-headshot {
-  justify-self: center;
+.projects-item > img {
   width: 100px;
   height: 100px;
-  /* max-width: 100%;
-  max-height: 100%; */
+  align-self: center;
+}
+
+.projects-item > h4 {
   padding: 1.6rem;
+  height: 6.8rem;
+  background:  var(--col-tertiary);
 }
 
 /* ---------- Footer ----------- */
