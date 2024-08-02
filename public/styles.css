@@ -50,13 +50,25 @@ table {
 }
 
 /* --------- Colour Theme ----------- */
-:root {
+/* :root {
   --col-primary: #208040;
   --col-primary-bg: #2DB359;
   --col-primary-fg: #1A6633;
   --col-secondary: #404A80;
   --col-secondary-bg: #5968B3;
   --col-secondary-fg: #333C66;
+  --col-accent: #FFD500;
+  --col-white: #FFFFFF;
+  --col-black: #000000;
+} */
+
+:root {
+  --col-primary: #2A69A8;
+  --col-primary-bg: #3078BF;
+  --col-primary-fg: #205080;
+  --col-secondary: #2A543F;
+  --col-secondary-bg: #408060;
+  --col-secondary-fg: #204030;
   --col-accent: #FFD500;
   --col-white: #FFFFFF;
   --col-black: #000000;
@@ -89,7 +101,12 @@ header {
 }
 
 section {
+  height: 100vh;
   padding: 7.2rem;
+}
+
+section:nth-child(even) {
+  background-color: var(--col-primary-bg);
 }
 
 /* ----------- Text ------------ */
@@ -195,16 +212,19 @@ nav > a:hover {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  height: 100vh;
   background-color: var(--col-white);
+}
+
+/* ----------- About ------------ */
+#about {
+  display: flex;
+  flex-direction: column;
 }
 
 /* ----------- Projects ------------ */
 #projects {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: var(--col-primary-bg);
 }
 
 #projects-heading {

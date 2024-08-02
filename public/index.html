@@ -52,27 +52,102 @@
     </section>
     
     <section id="about">
+      <div id="about-heading">
+        <h3>About</h3>
+      </div>
+      <div class="about-content">
+        <div class="image">
+          <img src="profile-photo.jpg" alt="James Hamilton">
+        </div>
+        <div>
+          <p>I'm a passionate data scientist specialising in sustainable energy solutions. With a strong background in mathematics, I help organisations leverage data-driven insights to optimise energy use, reduce emissions, and transition to a greener future.</p>
+          <p>My mission is to empower the renewable energy transition.</p>
+          <button><a href="about.html">Learn More</a></button>
+        </div>
+      </div>
     </section>
     
     <section id="services">
+      <div id="services-heading">
+        <h3>Services</h3>
+      </div>
+      <div class="service-content">
+        <div class="card">
+          <i class="icon"></i>  
+          <h3>Energy Data Analysis</h3>
+          <p>I transform raw energy data into actionable insights, helping you identify trends, optimise consumption, and reduce costs.</p>
+          <button><a href="services.html#analysis">Learn More</a></button>
+        </div>
+        <div class="card">
+          <i class="icon"></i> 
+          <h3>Renewable Energy Forecasting</h3>
+          <p>Leveraging machine learning and statistical models, I provide accurate forecasts of renewable energy generation to support your planning and decision-making.</p>
+          <button><a href="services.html#forecasting">Learn More</a></button>
+        </div>
+      </div>
     </section>
     
     <section id="projects">
       <div id="projects-heading">
         <h3>Projects</h3>
       </div>
-      <div id="projects-carousel">
-        <div id="projects-item1" class="projects-item">
-          <img src="images/bg_hero.png" alt="Placeholder">
-          <h4>Placeholder text</h4>
+      <div class="projects-content">
+        <div class="project-card">
+          <img src="project1-image.jpg" alt="Project 1 Image">
+          <h3>Solar Panel Optimization</h3>
+          <p>Utilized machine learning models to optimize solar panel placement and increase energy production by 15% for a commercial client.</p>
+          <p class="tools">Tools: Python, Scikit-learn</p> <a href="projects.html#project1" class="view-more-button">View Project</a>
         </div>
       </div>
+      <a href="projects.html" class="all-projects-button">View All Projects</a> 
     </section>
     
     <section id="insights">
+      <div id="insights-heading">
+        <h3>Insights</h3>
+      </div>
+      <div class="insights-content">
+        <article class="insight">
+          <img src="insight1-image.jpg" alt="Insight 1 Image">
+          <h3>The Impact of AI on Renewable Energy</h3>
+          <p class="date">June 1, 2024</p>
+          <p>How artificial intelligence is revolutionizing the way we generate, store, and consume renewable energy.</p>
+          <a href="insight1.html" class="read-more-button">Read More</a>
+        </article>
+      </div>
+      <aside class="sidebar">
+        <h3>Categories</h3>
+        <ul>
+          <li>Renewable Energy</li>
+          <li>Energy Efficiency</li>
+        </ul>
+        <h3>Tags</h3>
+        <ul>
+          <li>Data Analysis</li>
+          <li>Machine Learning</li>
+        </ul>
+      </aside>
     </section>
     
     <section id="contact">
+      <div id="contact-heading">
+        <h3>Contact</h3>
+      </div>
+      <div class="contact-content">
+        <div class="contact-info">
+          <p>I'd love to hear from you. Let's discuss how we can collaborate to create a more sustainable future.</p>
+          <ul>
+            <li><i class="email-icon"></i><a href="mailto:james@jameshamiltondata.com">james@jameshamiltondata.com</a></li>
+            <li><i class="linkedin-icon"></i><a href="your-linkedin-profile">LinkedIn</a></li>
+          </ul>
+        </div>
+        <form class="contact-form">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" placeholder="Your Message" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </section>
     
   </main>
@@ -81,13 +156,15 @@
     <div id="footer-nav">
       <ul>
         <li><a href="#" onclick="scrollToElement(event, 'hero')">Home</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'work')">Work</a></li>
         <li><a href="#" onclick="scrollToElement(event, 'about')">About</a></li>
-        <li><a href="#" onclick="scrollToElement(event, 'cv')">CV</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'services')">Services</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'projects')">Projects</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'insights')">Insights</a></li>
+        <li><a href="#" onclick="scrollToElement(event, 'contact')">Contact</a></li>
       </ul>
     </div>
     <div id="footer-copyright">
-      <small>Copyright &#xA9; 2023 James Hamilton. All rights reserved</small>
+      <small>Copyright &#xA9; 2024 James Hamilton. All rights reserved</small>
     </div>
   </footer>
   
