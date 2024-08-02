@@ -1,1 +1,1 @@
-# A simple website layout for professionals
+# A simple website framework for professionals
