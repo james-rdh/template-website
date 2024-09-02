@@ -7,15 +7,15 @@ services:
     restart: always
     volumes:
       - ./public/:/usr/share/nginx/html/
-      - ./nginx/conf/:/etc/nginx/conf.d/:ro
-      - ./certbot/www/:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/letsencrypt/:ro
+      - ./nginx/conf/:/etc/nginx/conf.d/
+      - ./certbot/www/:/var/www/certbot/
+      - ./certbot/conf/:/etc/letsencrypt/
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./nginx/conf/:/etc/nginx/conf.d/
-      - ./certbot/www/:/var/www/certbot/:rw
-      - ./certbot/conf/:/etc/letsencrypt/:rw
+      - ./certbot/www/:/var/www/certbot/
+      - ./certbot/conf/:/etc/letsencrypt/
     depends_on:
       - nginx
     command:
