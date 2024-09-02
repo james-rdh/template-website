@@ -22,7 +22,8 @@ services:
       - certonly
       - --webroot
       - -w
-      - /usr/share/nginx/html
+      - /var/www/certbot
+      - --nginx
       - --agree-tos
       - --no-eff-email
       - -d
