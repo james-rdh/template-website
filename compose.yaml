@@ -19,13 +19,7 @@ services:
     depends_on:
       - nginx
     command:
-      - certonly
-      - --webroot
-      - -w
-      - /var/www/certbot
       - --nginx
-      - --agree-tos
-      - --no-eff-email
       - -d
       - james-hamilton.uk
       - -d
