@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   nginx:
     image: nginx:latest
@@ -21,7 +19,6 @@ services:
     depends_on:
       - nginx
     command:
-      - certbot
       - certonly
       - --webroot
       - -w
