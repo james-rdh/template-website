@@ -8,14 +8,31 @@ services:
       - 443:443
     restart: always
     volumes:
-      - ./public/:/var/www/html/
+      - ./public/:/usr/share/nginx/html/
       - ./nginx/conf/:/etc/nginx/conf.d/:ro
       - ./certbot/www/:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/letsencrypt/:ro
   certbot:
     image: certbot/certbot:latest
     volumes:
+      - ./nginx/conf/:/etc/nginx/conf.d/
       - ./certbot/www/:/var/www/certbot/:rw
       - ./certbot/conf/:/etc/letsencrypt/:rw
     depends_on:
       - nginx
-    command: ["--webroot", "-w", "/var/www/certbot", "--nginx", "--agree-tos", "--no-eff-email", "-d", "james-hamilton.uk", "-d", "jameshamiltondata.com", "-d", "jameshamiltonenergy.com", "--cert-name", "jameshamilton"]
+    command:
+      - certbot
+      - certonly
+      - --webroot
+      - -w
+      - /var/www/certbot
+      - --agree-tos
+      - --no-eff-email
+      - -d
+      - james-hamilton.uk
+      - -d
+      - jameshamiltondata.com
+      - -d
+      - jameshamiltonenergy.com
+      - --cert-name
+      - jameshamilton
