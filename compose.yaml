@@ -22,7 +22,7 @@ services:
       - certonly
       - --webroot
       - -w
-      - /var/www/certbot
+      - /usr/share/nginx/html
       - --agree-tos
       - --no-eff-email
       - -d
