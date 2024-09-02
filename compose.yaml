@@ -8,23 +8,28 @@ services:
     volumes:
       - ./public/:/usr/share/nginx/html/
       - ./nginx/conf/:/etc/nginx/conf.d/
-      - ./certbot/www/:/var/www/certbot/
-      - ./certbot/conf/:/etc/letsencrypt/
+      - ./data/certbot/conf/:/etc/letsencrypt/
+      - ./data/certbot/www/:/var/www/certbot/
+    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./nginx/conf/:/etc/nginx/conf.d/
-      - ./certbot/www/:/var/www/certbot/
-      - ./certbot/conf/:/etc/letsencrypt/
-    depends_on:
-      - nginx
+      - ./data/certbot/conf/:/etc/letsencrypt/
+      - ./data/certbot/www/:/var/www/certbot/
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
     command:
-      - --nginx
+      - certonly
+      - --webroot
+      - -w
+      - /var/www/certbot
+      - --agree-tos
+      - --no-eff-email
+      - --cert-name
+      - jameshamilton
       - -d
       - james-hamilton.uk
       - -d
       - jameshamiltondata.com
       - -d
       - jameshamiltonenergy.com
-      - --cert-name
-      - jameshamilton
