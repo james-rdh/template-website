@@ -12,6 +12,8 @@ services:
     restart: unless-stopped
   certbot:
     image: certbot/certbot:latest
+    depends_on:
+      - nginx
     volumes:
       - ./public/:/var/www/html/
       - ./nginx/:/etc/nginx/
