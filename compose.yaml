@@ -6,8 +6,9 @@ services:
       - 443:443
     volumes:
       - ./public/:/var/www/html/
-      - ./nginx/:/etc/nginx/
-      - ./letsencrypt/:/etc/letsencrypt/
+      - ./nginx/:/etc/nginx/:ro
+      - ./certbot/www/:/var/www/certbot/:ro
+      - ./certbot/conf/:/etc/nginx/ssl/:ro
     command: /bin/sh -c "chmod +x /etc/nginx/init.sh && /etc/nginx/init.sh"
     restart: unless-stopped
   certbot:
@@ -15,7 +16,6 @@ services:
     depends_on:
       - nginx
     volumes:
-      - ./public/:/var/www/html/
-      - ./nginx/:/etc/nginx/
-      - ./letsencrypt/:/etc/letsencrypt/
+      - ./certbot/www/:/var/www/certbot/:rw
+      - ./certbot/conf/:/etc/letsencrypt/:rw
     command: /bin/sh -c "chmod +x /etc/letsencrypt/init.sh && /etc/letsencrypt/init.sh"
