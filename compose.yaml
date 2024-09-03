@@ -9,6 +9,7 @@ services:
       - ./nginx/:/etc/nginx/
       - ./letsencrypt/:/etc/letsencrypt/
     command: /bin/sh -c "/etc/nginx/init.sh"
+    restart: unless-stopped
   certbot:
     image: certbot/certbot:latest
     volumes:
