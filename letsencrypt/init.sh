@@ -59,8 +59,8 @@ docker-compose run --rm --entrypoint "\
     $domain_args \
     --certname $cert_name
     --rsa-key-size $rsa_key_size \
-    --agree-tos \
-    --no-eff-email
+    --agree-tos 1 \
+    --no-eff-email \
     --force-renewal" certbot
 echo
 
