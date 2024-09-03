@@ -8,7 +8,7 @@ services:
       - ./public/:/var/www/html/
       - ./nginx/:/etc/nginx/
       - ./letsencrypt/:/etc/letsencrypt/
-    command: /bin/sh -c "/etc/nginx/init.sh"
+    command: /bin/sh -c "chmod +x /etc/nginx/init.sh && /etc/nginx/init.sh"
     restart: unless-stopped
   certbot:
     image: certbot/certbot:latest
@@ -18,4 +18,4 @@ services:
       - ./public/:/var/www/html/
       - ./nginx/:/etc/nginx/
       - ./letsencrypt/:/etc/letsencrypt/
-    command: /bin/sh -c "/etc/letsencrypt/init.sh"
+    command: /bin/sh -c "chmod +x /etc/letsencrypt/init.sh && /etc/letsencrypt/init.sh"
