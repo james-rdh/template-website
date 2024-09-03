@@ -8,11 +8,11 @@ services:
       - ./public/:/var/www/html/
       - ./nginx/:/etc/nginx/
       - ./letsencrypt/:/etc/letsencrypt/
-    command: /bin/sh -c "./nginx/init.sh"
+    command: /bin/sh -c "/etc/nginx/init.sh"
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./public/:/var/www/html/
       - ./nginx/:/etc/nginx/
       - ./letsencrypt/:/etc/letsencrypt/
-    command: /bin/sh -c "./letsencrypt/init.sh"
+    command: /bin/sh -c "/etc/letsencrypt/init.sh"
