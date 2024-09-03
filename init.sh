@@ -48,7 +48,7 @@ case "$email" in
   *) email_arg="--email $email" ;;
 esac
 
-docker compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/html $email_arg $domain_args --certname $cert_name --rsa-key-size $rsa_key_size --agree-tos --no-eff-email --force-renewal" certbot
+docker compose run --rm --entrypoint "certbot certonly --webroot -w /var/www/html $email_arg $domain_args --cert-name $cert_name --rsa-key-size $rsa_key_size --agree-tos --no-eff-email --force-renewal" certbot
 
 echo "### Reloading nginx ..."
 docker compose exec nginx nginx -s reload
