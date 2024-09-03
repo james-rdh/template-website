@@ -4,17 +4,15 @@ services:
     ports:
       - 80:80
       - 443:443
-    restart: unless-stopped
     volumes:
       - ./public/:/var/www/html/
-      - ./nginx/conf/:/etc/nginx/conf.d/
-      - ./data/certbot/conf/:/etc/letsencrypt/
-    command: "/bin/sh -c 'while :; do sleep 6h & wait $${!}; nginx -s reload; done & nginx -g \"daemon off;\"'"
+      - ./nginx/:/etc/nginx/
+      - ./letsencrypt/:/etc/letsencrypt/
+    command: "./nginx/init.sh"
   certbot:
     image: certbot/certbot:latest
     volumes:
       - ./public/:/var/www/html/
-      - ./nginx/conf/:/etc/nginx/conf.d/
-      - ./data/certbot/conf/:/etc/letsencrypt/
-    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
-    command: "certonly --webroot -w /var/www/html --cert-name=jameshamilton -d james-hamilton.uk -d jameshamiltondata.com -d jameshamiltonenergy.com --agree-tos --no-eff-email"
+      - ./nginx/:/etc/nginx/
+      - ./letsencrypt/:/etc/letsencrypt/
+    command: "./letsencrypt/init.sh"
