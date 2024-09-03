@@ -22,15 +22,15 @@ email="" # Adding a valid address is strongly recommended
 # fi
 
 echo "### Creating dummy certificate for $domains ..."
-docker-compose run --rm --entrypoint "openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" certbot
+docker compose run --rm --entrypoint "openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" certbot
 echo
 
 echo "### Starting nginx ..."
-docker-compose up --force-recreate -d nginx
+docker compose up --force-recreate -d nginx
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
-docker-compose run --rm --entrypoint "rm -Rf /etc/letsencrypt/live/$cert_name && rm -Rf /etc/letsencrypt/archive/$cert_name && rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
+docker compose run --rm --entrypoint "rm -Rf /etc/letsencrypt/live/$cert_name && rm -Rf /etc/letsencrypt/archive/$cert_name && rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
 echo
 
 echo "### Requesting Let's Encrypt certificate for $domains ..."
@@ -47,7 +47,7 @@ case "$email" in
   *) email_arg="--email $email" ;;
 esac
 
-docker-compose run --rm --entrypoint "certonly --webroot -w /var/www/html $email_arg $domain_args --certname $cert_name --rsa-key-size $rsa_key_size --agree-tos --no-eff-email --force-renewal" certbot
+docker compose run --rm --entrypoint "certonly --webroot -w /var/www/html $email_arg $domain_args --certname $cert_name --rsa-key-size $rsa_key_size --agree-tos --no-eff-email --force-renewal" certbot
 
 echo "### Reloading nginx ..."
-docker-compose exec nginx nginx -s reload
+docker compose exec nginx nginx -s reload
