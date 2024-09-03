@@ -6,9 +6,9 @@ services:
       - 443:443
     volumes:
       - ./public/:/var/www/html/
-      - ./nginx/:/etc/nginx/:ro
-      - ./certbot/www/:/var/www/certbot/:ro
-      - ./certbot/conf/:/etc/nginx/ssl/:ro
+      - ./nginx/:/etc/nginx/
+      - ./certbot/www/:/var/www/certbot/
+      - ./certbot/conf/:/etc/nginx/ssl/
     command: /bin/sh -c "chmod +x /etc/nginx/init.sh && /etc/nginx/init.sh"
     restart: unless-stopped
   certbot:
