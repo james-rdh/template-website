@@ -22,7 +22,7 @@ email="" # Adding a valid address is strongly recommended
 # fi
 
 echo "### Creating dummy certificate for $domains ..."
-mkdir -p "./letsencrypt/live/$cert_name/"
+sudo mkdir -p "./letsencrypt/live/$cert_name/"
 docker compose run --rm --entrypoint "openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" certbot
 echo
 
