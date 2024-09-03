@@ -34,10 +34,7 @@ docker-compose up --force-recreate -d nginx
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
-docker-compose run --rm --entrypoint "\
-  rm -Rf /etc/letsencrypt/live/$cert_name && \
-  rm -Rf /etc/letsencrypt/archive/$cert_name && \
-  rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
+docker-compose run --rm --entrypoint "rm -Rf /etc/letsencrypt/live/$cert_name && rm -Rf /etc/letsencrypt/archive/$cert_name && rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
 echo
 
 echo "### Requesting Let's Encrypt certificate for $domains ..."
