@@ -1,5 +1,5 @@
 #!/bin/bash
-
+echo "Starting script!"
 domains=(james-hamilton.uk jameshamiltondata.com jameshamiltonenergy.com)
 cert_name=jameshamilton
 rsa_key_size=4096
