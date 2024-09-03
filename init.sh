@@ -3,7 +3,7 @@
 domains=(james-hamilton.uk jameshamiltondata.com jameshamiltonenergy.com)
 cert_name=jameshamilton
 rsa_key_size=4096
-path="./letsencrypt/live/$cert_name"
+path="/etc/letsencrypt/live/$cert_name"
 email="" # Adding a valid address is strongly recommended
 
 # if [ -d "$path" ]; then
@@ -22,7 +22,7 @@ email="" # Adding a valid address is strongly recommended
 # fi
 
 echo "### Creating dummy certificate for $domains ..."
-mkdir -p "./letsencrypt/live/jameshamilton/"
+mkdir -p "./letsencrypt/live/$cert_name/"
 docker compose run --rm --entrypoint "openssl req -x509 -nodes -newkey rsa:$rsa_key_size -days 1 -keyout '$path/privkey.pem' -out '$path/fullchain.pem' -subj '/CN=localhost'" certbot
 echo
 
@@ -31,7 +31,7 @@ docker compose up --force-recreate -d nginx
 echo
 
 echo "### Deleting dummy certificate for $domains ..."
-docker compose run --rm --entrypoint "rm -Rf /etc/letsencrypt/live/$cert_name && rm -Rf /etc/letsencrypt/archive/$cert_name && rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
+docker compose run --rm --entrypoint "rm -Rf $path && rm -Rf /etc/letsencrypt/archive/$cert_name && rm -Rf /etc/letsencrypt/renewal/$cert_name.conf" certbot
 echo
 
 echo "### Requesting Let's Encrypt certificate for $domains ..."
